@@ -1,1 +1,5 @@
-Coming soon...
+Template to import holes for motor: https://www.tinkercad.com/things/fBj4vVQDfGe
+Template to import holes for castor wheel: https://www.tinkercad.com/things/l1YPpQ9fw3u
+Template to import holes for switch: https://www.tinkercad.com/things/fhlQDjcYmfI
+
+Example chassis: coming soon...
