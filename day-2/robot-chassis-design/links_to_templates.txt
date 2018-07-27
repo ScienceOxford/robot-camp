@@ -5,4 +5,4 @@ Template to import holes for edge connector cable tie: https://www.tinkercad.com
 Template to import holes for edge connector slot: https://www.tinkercad.com/things/iwDUqyzmO25
 Template to import holes for battery screws: https://www.tinkercad.com/things/7WJ6Odc1vZ4
 
-Example chassis: coming soon...
+Example chassis: https://www.tinkercad.com/things/0eqKL17XKp9
