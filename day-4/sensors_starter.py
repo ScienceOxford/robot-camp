@@ -23,7 +23,8 @@ def stop():
     display.show(Image.ANGRY)
 
 
-# Inputs between 0-1023 to control both motors
+# The L9110s motor driver uses an input of 0 (low) to turn the motor on at full speed, and an input of 1023 (high) to turn it off
+# The below function flips this so that when calling drive(), a high number runs the motors faster
 def drive(L, R):
     # Below controls the left wheel: forward, backward, stop at given speed
     if L > 0 and L <= 1023:
