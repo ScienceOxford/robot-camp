@@ -65,6 +65,4 @@ def right_turn(time):
 
 stop(1)
 
-'''
-WRITE YOUR CODE BELOW HERE!
-'''
+# WRITE YOUR CODE BELOW HERE!
