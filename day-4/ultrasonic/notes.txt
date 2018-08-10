@@ -1,0 +1,4 @@
+Sensor needs 5V supply, with shared ground to micro:bit
+1K resister between echo pin and micro:bit to protect from 5V supply
+Motor on pin13 must be moved to e.g. pin8 - pin13 is used by the class
+Use only one distance sensor
