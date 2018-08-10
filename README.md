@@ -1,7 +1,5 @@
 # robot-camp
 
-In progress!
-
 Files for the Future Engineers project - funded by the IET/IMechE Engineering Education Grant Scheme, with support from the Microbit Foundation
 
 Developed by ScienceOxford for educational purposes. Please give credit where applicable. We love seeing what you've created, so tag us when you share! @ScienceOxford
