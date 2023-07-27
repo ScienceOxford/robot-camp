@@ -20,3 +20,16 @@ def distance():
     dist_cm = (t_echo / 2) * 34300
     dist_cm = "{:.2f}".format(dist_cm)
     return dist_cm
+
+config()
+
+while True:
+    current_distance = distance()
+    print('Ultrasonic = ', current_distance)
+  
+    if current_distance >= 10:
+        display.show(Image.YES)
+    else:
+        display.show(Image.NO)
+
+    sleep(100)
