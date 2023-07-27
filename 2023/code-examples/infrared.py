@@ -8,3 +8,5 @@ while True:
         display.show(Image.YES)
     else:
         display.show(Image.NO)
+
+    sleep(100)
