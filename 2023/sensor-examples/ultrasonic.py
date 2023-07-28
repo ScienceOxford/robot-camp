@@ -19,7 +19,7 @@ def distance():
     # calculate distance in cm
     dist_cm = (t_echo / 2) * 34300
     dist_cm = "{:.2f}".format(dist_cm)
-    return dist_cm
+    return float(dist_cm)
 
 config()
 
