@@ -99,16 +99,13 @@ bot.stop()           # turn off both motors</pre>
   <div id="ultrasonics" class="left">
     <h3>programming ultrasonic sensors</h3>
     <p>In the Project menu, click 'Create File' and name the new file 'ultrasonic'.</p>
-    <p>Copy and paste <strong>all</strong> of the code from this link into your empty new file: <a href="...">ultrasonic.py</a></p>
+    <p>Copy and paste <strong>all</strong> of the code from this link into your empty new file: <a href=".\examples\ultrasonic.py">ultrasonic.py</a></p>
     <p>In the Project menu, switch back to main.py, and edit your code:</p>
     <pre>from microbit import *  # don't delete this!
 import bot              # don't delete this!
 import ultrasonic       # GET THE NEW CODE
 
 bot.config()            # don't delete this!
-
-front = ultrasonic.distance(echo=pin1)
-left = ultrasonic.distance(echo=pin2)
 
 # DELETE ALL OTHER CODE, REMEMBER TO SAVE A COPY FIRST</pre>
     <br>
@@ -160,7 +157,7 @@ left = ultrasonic.distance(echo=pin2)
     <br>
     <p>Try to write the rest of the code yourself, following the logic given in the psudocode, then test it - can you stop and turn the robot by using your hand as an obstacle?</p>
     <p>Add your robot's calibration back in - what numbers do you need to keep the robot driving straight forward?</p>
-    <p>If you need it, a working example of the code is here: <a href="">distance-sensing.py</a>.</p>
+    <p>If you need it, a working example of the code is here: <a href=".\examples\distance-sensing.py">distance-sensing.py</a>.</p>
     <br>
     <p>Test your robot on your obstacle course and adjust the code as needed - it is very unlikely to work perfectly the first time!</p>
     <br>
