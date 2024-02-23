@@ -17,27 +17,155 @@
   </header>
 
   <div id="introduction" class="left">
-    <h3>micro:bits</h3>
-    <p>...</p>
+    <h3>BBC micro:bits & MicroPython</h3>
+    <p>Your micro:bit will be the brains of your robot; they have <a href="https://microbit.org/get-started/features/overview/">lots of built-in inputs and outputs</a>, many of which you will use in your project.</p>
+    <p>We will be programming micro:bits in Python during Robot Club; the version of Python used on a micro:bit is <a href="https://microbit-micropython.readthedocs.io/en/v2-docs/">MicroPython</a>, which means that it's a smaller version of the full Python programming language designed to run on microcontrollers such as the micro:bit. It doesn't have everything that full Python has, and some code is specific to the micro:bit, but the syntax and programming style is the same.</p>
+    <br>
+    <p>Open <a href="https://python.microbit.org/v/3">the editor</a> to get started.</p>
+    <p>Edit the code on the screen to turn your micro:bit into a name badge.</p>
+    <p>Fold the 3D printed case around your micro:bit and battery pack, you can hang it onto a lanyard by the battery cable.</p>
+    <img src="" alt="micro:bit showing an 'S' on the display, inside a 3D printed case, hanging by the battery cable off a lanyard" width="400" height="auto">
+    <br>
+    <p>When you are finished, you can either decorate your micro:bit's case with markers, or explore the Reference menu in the micro:bit editor.</p>
     <br>
   </div>
 
   <div id="robots" class="left">
     <h3>robot basics</h3>
-    <p>...</p>
+    <p>During today's session, you will program your micro:bit to control a pre-built robot, to practice coding it before building your own.</p>
+    <img src="" alt="robot buggy with a micro:bit inside and two ultrasonic distance sensors connected" width="400" height="auto">
+    <br>
+    <p>Often when programming a micro:bit, we keep all of our code in the main file. When there are lots of functions, for example when sending instructions to motors for a robot, it is good practice to remove some of that code into the background.</p>
+    <img src="" alt="screenshot of the project menu of the micro:bit editor, showing three files - main.py, bot.py, and ultrasonic.py" width="400" height="auto">
+    <br>
+    <p>In the Project menu, click 'Create File' and name the new file 'bot'.</p>
+    <p>Copy and paste <strong>all</strong> of the code from this link into your empty new file: <a href="https://raw.githubusercontent.com/ScienceOxford/robot-camp/main/2023/robot-examples/bot.py">bot.py</a></p>
+    <br>
+    <p>In the Project menu, switch back to main.py, and add the following code underneath <code>from microbit import *</code> :</p>
+    <pre>import bot           # get the new bot.py code
+bot.config()         # set up the motors
+
+bot.drive(800, 800)  # turn on both motors
+sleep(2000)          # wait for 2 seconds
+bot.stop()           # turn off both motors</pre>
+    <br>
+    <p>Test your (borrowed) robot - does it sucessfully turn on both of the motors?</p>
+    <p>Experiment with the code:</p>
+    <ul>
+      <li><strong>Can you get it to drive backwards?</strong><br>
+      <em>Hint: you can use negative numbers</em></li>
+      <br>
+      <li><strong>How slowly can you get it to drive without stopping?</strong><br>
+      <em>Hint: this is an engineering limit rather than a coding limit</em></li>
+      <br>
+      <li><strong>What is the fastest the motors can turn?</strong><br>
+      <em>Hint: look inside bot.py</em></li>
+      <br>
+      <li><strong>Can you get your robot to drive in a properly straight line?</strong><br>
+      <em>Hint: the motors do not both turn at the same rate</em></li>
+    </ul>
+    <br>
+    <p>Each robot is slightly different, and you will need to calibrate your own robot once you have built it.</p>
+    <p><strong>Save a copy of your code so far into the computer's Downloads folder, and rename it YourName-Calibration</strong> to save your directional calibration for this robot.</p>
     <br>
   </div>
 
-  <div id="paths" class="left">
-    <h3>creating paths</h3>
-    <p>...</p>
+  <div id="obstacles" class="left">
+    <h3>designing obstacles</h3>
+    <p>Now that your robots are calibrated, you can start using sensors.</p>
+    <p>These robots have two ultrasonic distance sensors attached - one looking for obstacles in front, and one looking for obstacles on the left.</p>
+    <p>Ultrasonic sensors work by echolocation - a small pulse of sound is sent out, and the sensor waits for it to bounce off an object and return. You can program your robot to use this information to tell how far away objects are and decide whether to avoid them or not.</p>
+    <img src="" alt="diagram showing how ultrasonic distance sensors use echolocation" width="400" height="auto">
+    <br>
+    <p>The logic of the robot is such:</p>
+    <ol>
+      <li>Is there something in front of me? Y/N</li>
+      <li>If N, drive forward, go back to 1</li>
+      <li>If Y, stop, is there something to the left of me? Y/N</li>
+      <li>If N, turn left, go back to 1</li>
+      <li>If Y, turn right, go back to 1</li>
+    </ol>
+    <br>
+    <p>Before you can program your robots to avoid the obstacles, you need to create an area for the robots to traverse.</p>
+    <p>In small groups, use the cardboard and other craft supplies provided to make a maze or obstactle course for your robots (don't make it too difficult!).</p>
+    <p>Consider the following:</p>
+    <ul>
+      <li>Where are the sensors on the robots, make sure they are able to detect your obstacles.</li>
+      <li>How easily do your robots turn? How much space do you need to leave between obstacles?</li>
+    </ul>
     <br>
   </div>
 
   <div id="ultrasonics" class="left">
     <h3>programming ultrasonic sensors</h3>
-    <p>...</p>
+    <p>In the Project menu, click 'Create File' and name the new file 'ultrasonic'.</p>
+    <p>Copy and paste <strong>all</strong> of the code from this link into your empty new file: <a href="...">ultrasonic.py</a></p>
+    <p>In the Project menu, switch back to main.py, and edit your code:</p>
+    <pre>from microbit import *  # don't delete this!
+import bot              # don't delete this!
+import ultrasonic       # GET THE NEW CODE
+
+bot.config()            # don't delete this!
+
+front = ultrasonic.distance(echo=pin1)
+left = ultrasonic.distance(echo=pin2)
+
+# DELETE ALL OTHER CODE, REMEMBER TO SAVE A COPY FIRST</pre>
     <br>
+    <p>We will discuss the wiring of the sensors, and the pins used, in a future workshop, don't change any of the above code for now.</p>
+    <br>
+    <p>You are now set up ready to write the main logic of your robot's program.</p>
+    <p>The code you write today will also control your own robots in the future, so it is a good idea to <code><strong>#comment your code</strong></code> as you go, so that you remember why you did certain things.</p>
+    <br>
+  </div>
+
+  <div id="psudocode" class="left">
+    <h3>psudocode logic & initial code</h3>
+    <p>Here is a description of the logic of the micro:bit program, to help you to write your own version of the code.</p>
+    <p><em>Alternatively, you could flip the logic and use further <code>while</code> loops instead of <code>if</code> statements.</em></p>
+    <br>
+    <pre>forever:
+
+    check distance-to-front-obstacle
+    if distance-to-front-obstacle is less than 6cm:
+        stop
+
+        check distance-to-left-obstacle
+        if distance-to-left-obstacle is less than 6cm:
+            turn-right
+            wait for 200ms
+            stop
+
+        else:
+            turn-left
+            wait for 200ms
+            stop
+
+    else:
+        drive-forward
+        wait for 200ms</pre>
+    <br>
+    <p>Remember not to change any of the set-up code. Below this, you can start the new code like so:</p>
+    <pre>while True:
+
+    front = ultrasonic.distance(echo=pin1)
+    if front <= 6.0:
+        bot.stop()
+
+        left = ultrasonic.distance(echo=pin2)
+
+    else:
+        bot.drive(500, 500)
+        sleep(200)</pre>
+    <br>
+    <p>Try to write the rest of the code yourself, following the logic given in the psudocode, then test it - can you stop and turn the robot by using your hand as an obstacle?</p>
+    <p>Add your robot's calibration back in - what numbers do you need to keep the robot driving straight forward?</p>
+    <p>If you need it, a working example of the code is here: <a href="">distance-sensing.py</a>.</p>
+    <br>
+    <p>Test your robot on your obstacle course and adjust the code as needed - it is very unlikely to work perfectly the first time!</p>
+    <br>
+    <p><strong>At the end of the session, save a copy of your code into the computer's Downloads folder, and rename it YourName-Ultrasonics</strong></p>
+    <p>We will save your code for you to use in future sessions and email you a link to where to find it.</p>
   </div>
 
   <footer class="links">
