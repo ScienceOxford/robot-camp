@@ -77,7 +77,7 @@ bot.stop()           # turn off both motors</pre>
     <p>Ultrasonic sensors work by echolocation - a small pulse of sound is sent out, and the sensor waits for it to bounce off an object and return. You can program your robot to use this information to tell how far away objects are and decide whether to avoid them or not.</p>
     <img src="" alt="diagram showing how ultrasonic distance sensors use echolocation" width="400" height="auto">
     <br>
-    <p>The logic of the robot is such:</p>
+    <p>An example of the logic of the robot is such:</p>
     <ol>
       <li>Is there something in front of me? Y/N</li>
       <li>If N, drive forward, go back to 1</li>
@@ -156,10 +156,16 @@ bot.config()            # don't delete this!
         sleep(200)</pre>
     <br>
     <p>Try to write the rest of the code yourself, following the logic given in the psudocode, then test it - can you stop and turn the robot by using your hand as an obstacle?</p>
-    <p>Add your robot's calibration back in - what numbers do you need to keep the robot driving straight forward?</p>
-    <p>If you need it, a working example of the code is here: <a href="https://raw.githubusercontent.com/ScienceOxford/robot-camp/main/2024-club/examples/distance-sensing.py">distance-sensing.py</a>.</p>
+    <p><em>If you need it, a working example of this code is here: <a href="https://raw.githubusercontent.com/ScienceOxford/robot-camp/main/2024-club/examples/distance-sensing.py">distance-sensing.py</a>.</em></p>
     <br>
-    <p>Test your robot on your obstacle course and adjust the code as needed - it is very unlikely to work perfectly the first time!</p>
+    <p>Add your robot's calibration back in - what numbers do you need to keep the robot driving straight forward?</p>
+    <br>
+    <p>Test your robot on your obstacle course and then make adjustments the code as needed.</p>
+    <ul>
+      <li>in which scenarios does the robot behave sensibly?</li>
+      <li>are there times when it gets stuck?</li>
+    </ul>
+    <p>There are many ways to improve this code. Begin by working out the logic of what you want to happen, and then work on the code.</p>
     <br>
     <p><strong>At the end of the session, save a copy of your code into the computer's Downloads folder, and rename it YourName-Ultrasonics</strong></p>
     <p>We will save your code for you to use in future sessions and email you a link to where to find it.</p>
