@@ -124,11 +124,11 @@ bot.config()            # don't delete this!
     <pre>forever:
 
     check distance-to-front-obstacle
-    if distance-to-front-obstacle is less than 6cm:
+    if distance-to-front-obstacle is less than 10cm:
         stop
 
         check distance-to-left-obstacle
-        if distance-to-left-obstacle is less than 6cm:
+        if distance-to-left-obstacle is less than 10cm:
             turn-right
             wait for 200ms
             stop
@@ -146,7 +146,7 @@ bot.config()            # don't delete this!
     <pre>while True:
 
     front = ultrasonic.distance(echo=pin1)
-    if front <= 6.0:
+    if front <= 10.0:
         bot.stop()
 
         left = ultrasonic.distance(echo=pin2)
