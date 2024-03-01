@@ -23,8 +23,15 @@
     <p>Open <a href="https://python.microbit.org/v/3">the editor</a> to get started.</p>
     <p>Connect your micro:bit to your device with the USB cable and wait for a few seconds for it to register the new connection.</p>
     <p>Click 'Send to microbit' on the editor, and follow the prompts to connect your micro:bit - <strong>the pop-ups include screenshots of what to click</strong> to make sure that it works.</p>
-    <p>- RELOADING A .HEX FILE</p>
-    <p>- RELOADING A .PY FILE</p>
+    <br>
+    <p>If you want to continue working on a program, first check if you saved a <strong>.hex</strong> (will include any extra files, such as bot.py) or <strong>.py</strong> (just the main code).</p>
+    <p>For either file, you can click <strong>Open</strong> in the bottom right of the editor.</p>
+    <p>Alternatively:</p>
+    <ul>
+      <li>If a <strong>.hex</strong>, you can drag-and-drop the file directly onto the editor, and your code will replace what is currently there.</li>
+      <li>If a <strong>.py</strong>, you can open it in a text editor and copy-and-paste your code into the micro:bit editor.</li>
+    </ul>
+    <br>
     <br>
   </div>
 
@@ -32,20 +39,54 @@
     <h3>using built-in sensors</h3>
     <p>- use e.g. light and temperature instead of the two ultrasonic distance sensors (same logic)</p>
     <br>
+    <p><em>Example program: <a href="" target="_blank">LightTemp-Basic.py</a></em></p>
+    <br>
+    <br>
   </div>
 
   <div id="debugging1" class="left">
     <h3>debugging technique #1 - print statements</h3>
-    <p>- get the information from the sensors directly</p>
-    <p>- string concatenation</p>
-    <p>- edit your instructions based on this information</p>
+    <p>If your micro:bit is connected to your computer, you can open the <strong>terminal</strong> to get live information from the micro:bit.</p>
+    <p>Edit your code to add in a <strong>print statement</strong>, which tells the micro:bit to <strong>print</strong> some information to the <strong>terminal</strong>.</p>
+    <pre>print(light)</pre>
+    <br>
+    <p>Run your code and check that it works.</p>
+    <ul>
+      <li>How often does the micro:bit print the information? Do you need to add a <code>sleep()</code> command to slow it down?</li>
+      <li>Think about the best place in your code to check the sensor data.</li>
+    </ul>
+    <br>
+    <p>A stream of numbers can be difficult to follow, but you can make it more legible by adding extra things into your print statement. Try:</p>
+    <pre>print('Light level= ', light)</pre>
+    <br>
+    <p>You can expand it even further by adding as much information as you need, e.g.</p>
+    <pre>print('Light level =', light, '; Temperature =', temp)</pre>
+    <br>
+    <p>Try it in your own program, adding as many print statements as seem helpful!</p>
+    <p>This can become extremely useful when testing new components, such as ultrasonic distance sensors, as you are able to make sure they are working correctly.</p>
+    <pre>print('Front =', front, '; Left =', left)</pre>
+    <br>
+    <p><em>Example program: <a href="" target="_blank">LightTemp-Print.py</a></em></p>
+    <br>
     <br>
   </div>
 
   <div id="debugging2" class="left">
     <h3>debugging technique #2 - using the micro:bit's display</h3>
-    <p>- can't use terminal if not plugged into the computer</p>
-    <p>- add quick display information (e.g. an image or a number) to make your own error messages</p>
+    <p>Once your initial debugging and calibration is complete, you will want to unplug your micro:bit from the computer, to attach it to your robot or use in some other project. This means that the terminal is no longer accessible.</p>
+    <p>You can use the micro:bit's display to help you to quickly see if there is an error, for example if one of the sensors does something unexpected!</p>
+    <br>
+    <p>In your light and temperature program, you could create error messages if, for example, the temperature reaches 100 degrees, which would suggest something has gone wrong with the sensor.</p>
+    <br>
+    <p><em>Example program: <a href="" target="_blank">LightTemp-Display.py</a></em></p>
+    <br>
+    <p>When an ultrasonic distance sensor is not working correctly, it can give a negative number. You could add an error notification into your robot program, to show something on the display if a sensor is not connected.</p>
+    <br>
+    <pre>if front < 0:
+    display.show('1')</pre>
+    <br>
+    <p><em>Example program: <a href="" target="_blank">RobotErrorMessages.py</a></em></p>
+    <br>
     <br>
   </div>
 
