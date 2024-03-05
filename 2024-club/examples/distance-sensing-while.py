@@ -8,14 +8,14 @@ while True:
 
     front = ultrasonic.distance(echo=pin1)
     while front > 10.0:
-        bot.drive(500, 500)
+        bot.drive(800, 800)
     bot.stop()
     
     left = ultrasonic.distance(echo=pin2)
     if left <= 10.0:
-        bot.drive(500, -500)
+        bot.drive(800, -800)
         sleep(200)
 
     else:
-        bot.drive(-500, 500)
+        bot.drive(-800, 800)
         sleep(200)
