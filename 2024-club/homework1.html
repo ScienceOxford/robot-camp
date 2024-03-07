@@ -37,9 +37,28 @@
 
   <div id="sensors" class="left">
     <h3>using built-in sensors</h3>
-    <p>- use e.g. light and temperature instead of the two ultrasonic distance sensors (same logic)</p>
+    <p>To make it easier to practice your robot's logic at home, we are going to edit the ultrasonic distance sensor code to use the micro:bit's built-in <strong>light level sensor</strong> and <strong>temperature sensor</strong> instead, and replace the <code>drive()</code> function with messages on the <strong>micro:bit's display</strong>.</p>
+    <p>An example program you can download is linked below, or you can see the syntax examples and edit your own version of the ultrasonic drive code that you worked on during the workshop.</p>
+    <pre>while True:
+    light = display.read_light_level()
+    if light <= 10.0:
+        display.scroll('dark')
+
+        temp = temperature()
+        if temp <= 10.0:
+            display.scroll('cold')
+
+        else:
+            display.scroll('warm')
+
+    else:
+        display.scroll('bright')
+    </pre>
     <br>
-    <p><em>Example program: <a href="" target="_blank">LightTemp-Basic.py</a></em></p>
+    <p>In this example, the micro:bit checks if it is bright or dark. If it is dark, it then checks if the temperature is warm or cold.</p>
+    <p><em>Example program: <a href=".\examples\LightTemp-Basic.py" target="_blank">LightTemp-Basic.py</a></em></p>
+    <p>Edit the program until you are happy with the way it works. You could use other sensors, such as the microphone or accelerometer instead (check the <strong>Reference</strong> for the syntax).</p>
+    <p>Test your code on the <strong>Emulator</strong>, changing the sensor values using the sliders, to check how it behaves with different values. Then download your code and test it in real life.</p>
     <br>
     <br>
   </div>
@@ -55,18 +74,24 @@
       <li>How often does the micro:bit print the information? Do you need to add a <code>sleep()</code> command to slow it down?</li>
       <li>Think about the best place in your code to check the sensor data.</li>
     </ul>
+    <p>You can expand <strong>Show serial</strong> under the <strong>Emulator</strong> to check how it works, before downloading the code to your real micro:bit.</p>
+    <p>When running the code in real life, you will need to <strong>Show serial</strong> on the bottom bar to expand the terminal.</p>
+    <p><strong>You may need to press the micro:bit's Reset button on the back to get your data.</strong></p>
     <br>
     <p>A stream of numbers can be difficult to follow, but you can make it more legible by adding extra things into your print statement. Try:</p>
-    <pre>print('Light level= ', light)</pre>
+    <pre>print('Light level =', light)</pre>
     <br>
     <p>You can expand it even further by adding as much information as you need, e.g.</p>
     <pre>print('Light level =', light, '; Temperature =', temp)</pre>
     <br>
-    <p>Try it in your own program, adding as many print statements as seem helpful!</p>
-    <p>This can become extremely useful when testing new components, such as ultrasonic distance sensors, as you are able to make sure they are working correctly.</p>
+    <p>Try it in your own program, adding as many print statements as seem helpful.</p>
+    <p><em>Example program: <a href=".\examples\LightTemp-Print.py" target="_blank">LightTemp-Print.py</a></em></p>
+    
+    <br>
+    <p>Print statements are extremely useful when testing new components, such as ultrasonic distance sensors, as you are able to make sure they are working correctly, and understand the values they give.</p>
     <pre>print('Front =', front, '; Left =', left)</pre>
     <br>
-    <p><em>Example program: <a href="" target="_blank">LightTemp-Print.py</a></em></p>
+    <p><em>Example program: <a href=".\examples\RobotUltrasonics-Print.py" target="_blank">RobotUltrasonics-Print.py</a></em></p>
     <br>
     <br>
   </div>
@@ -78,14 +103,14 @@
     <br>
     <p>In your light and temperature program, you could create error messages if, for example, the temperature reaches 100 degrees, which would suggest something has gone wrong with the sensor.</p>
     <br>
-    <p><em>Example program: <a href="" target="_blank">LightTemp-Display.py</a></em></p>
+    <p><em>Example program: <a href=".\examples\LightTemp-Display.py" target="_blank">LightTemp-Display.py</a></em></p>
     <br>
     <p>When an ultrasonic distance sensor is not working correctly, it can give a negative number. You could add an error notification into your robot program, to show something on the display if a sensor is not connected.</p>
     <br>
     <pre>if front < 0:
-    display.show('1')</pre>
+    display.show('F')</pre>
     <br>
-    <p><em>Example program: <a href="" target="_blank">RobotErrorMessages.py</a></em></p>
+    <p><em>Example program: <a href=".\examples\RobotUltrasonics-Display.py" target="_blank">RobotUltrasonics-Display.py</a></em></p>
     <br>
     <br>
   </div>
