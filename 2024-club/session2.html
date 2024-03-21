@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robot Club - Session 2</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <header>
+      <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Session 2: soldering and electronics</h1>
+    <br>
+  </header>
+
+  <div id="circuits" class="left">
+    <h3>circuit basics</h3>
+    <p>...</p>
+    <p><a href="https://uk.farnell.com/resistor-colour-code-calculator" target="_blank">Resistor colour code calculator</a></p>
+    <br>
+  </div>
+
+  <div id="pcb" class="left">
+    <h3>printed circuit boards</h3>
+    <p>...</p>
+    <br>
+  </div>
+
+  <div id="soldering" class="left">
+    <h3>how to solder</h3>
+    <p>...safety...</p>
+    <p>Kitronik have a great <a href="https://kitronik.co.uk/blogs/resources/how-to-solder-in-ten-easy-steps" target="_blank">10-step guide to soldering</a>, which includes pictures of good joints, and show some common mistakes.</p>
+    <br>
+    <p>For your practice soldering, you will make a keyring or pendant. It is a basic circuit to turn two LEDs on or off with the switch.</p>
+    <p>Step-by-step instructions for soldering the practice boards are provided here:</p>
+    <nav class="links bg_green">
+      <a href="..." target="_blank">Online instructions</a>
+      <a href=".\examples\TBD.pdf" target="_blank">PDF download</a>
+    </nav>
+    <p>Once you have finished the soldering, you can use markers to decorate it.</p>
+    <p><em>If you would like more practice before soldering your robot's power board, we have other practice boards for you to choose from.</em></p>
+    <br>
+  </div>
+
+  <div id="robot" class="left">
+    <h3>understanding your robot power board</h3>
+    <p>The board you are going to assemble today controls the power to different parts of the robot.</p>
+    <p>Your robot will be powered with a 9V battery, but this is too high a voltage for the micro:bit (which needs 3.3V), and for the ultrasonic sensors (which need 5V).</p>
+    <p>This board uses <em>voltage regulators</em> to reduce the voltage provided by the battery in different ways, giving you options for how to connect different components.</p>
+    <p>It is a bit like having <strong>three circuits</strong> connected together, and we are using different colours to indicate how much voltage each circuit uses.</p>
+    <ul>
+      <li><h4 style="background-color:red; color:black">Red = ~9V</h4><p><em>anything plugged in here uses the maximum voltage given by the batteries, used for the motors</em></p></li>
+      <li><h4 style="background-color:blue; color:black">Blue = 5V</h4><p><em>used for the ultrasonic distance sensors</em></p></li>
+      <li><h4 style="background-color:yellow; color:black">Yellow = 3.3V</h4><p><em>used for the micro:bit</em></p></li>
+    </ul>
+    <p><strong>As you solder your board, pay attention to the colours of the components you are adding, to make sure they go in the correct section. This will make using and troubleshooting your board much easier in the future.</strong></p>
+    <p>The picture below shows the components you will be adding, and what colour-coded section of the board they apply to.</p>
+    <img src=".\images\solderingA.png" alt="photograph of components, as described in the lists below" width="400px" height="auto">
+    <ul>
+      <li><h4 style="background-color:red; color:black">Red ~9V Section</h4></li>
+      <ul>
+        <li><strong>Battery connector</strong></li>
+        <li>Set of <strong>red pin headers</strong>, so you can connect wires to the ~9V supply</li>
+        <li><strong>Red LED</strong>, to give a visual reference that the battery is working</li>
+        <li><strong>470Ω resistor</strong>, to make sure the red LED works correctly</li>
+      </ul>
+
+      <li><h4 style="background-color:blue; color:black">Blue 5V Section</h4></li>
+      <ul>
+        <li><strong>5V voltage regulator</strong>, to provide a consistent 5V supply to this section</li>
+        <li>Set of <strong>blue pin headers</strong>, so you can connect wires to the 5V supply</li>
+        <li><strong>Blue LED</strong>, to give a visual reference that the 5V regulator is working</li>
+        <li><strong>100Ω resistor</strong>, to make sure the blue LED works correctly</li>
+      </ul>
+
+      <li><h4 style="background-color:yellow; color:black">Yellow 3.3V Section</h4></li>
+      <ul>
+        <li><strong>3.3V voltage regulator</strong>, to provide a consistent 3.3V supply to this section</li>
+        <li>Set of <strong>yellow pin headers</strong>, so you can connect wires to the 3.3V supply</li>
+        <li><strong>Yellow LED</strong>, to give a visual reference that the 3.3V regulator is working</li>
+        <li><strong>68Ω resistor</strong>, to make sure the yellow LED works correctly</li>
+      </ul>
+      
+      <li><h4 style="background-color:black; color:white">Other Components</h4></li>
+      <ul>
+        <li><strong>Switch</strong>, so you can turn the board on and off</li>
+        <li><strong>Capacitor</strong>, to help keep things running smoothly when your robot is drawing lots of power</li>
+        <li>Set of <strong>black pin headers</strong>, so you can connect wires to ground (negative)</li>
+      </ul>
+    </ul>
+    <br>
+  </div>
+
+  <div id="step-by-step" class="left">
+    <h3>soldering your robot power board</h3>
+    <p>Step-by-step instructions for soldering your robot board, are provided here:</p>
+    <nav class="links bg_green">
+      <a href="https://docs.google.com/presentation/d/166g9jHdkacaS7vsVpw5Y8Pm73UIF5y8gXfn6BKwvsdY/edit?usp=sharing" target="_blank">Online instructions</a>
+      <a href=".\examples\PowerBoardSoldering.pdf" target="_blank">PDF download</a>
+    </nav>
+    <p><em>Do not worry if you do not have time to solder the whole board during the workshop, we will finish it off ready for you to use in your robot.</em></p>
+  </div>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/robot-camp/2024-club" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
