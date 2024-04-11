@@ -31,7 +31,19 @@
     <br>
   </div>
 
-  <div id="circuits" class="left">
+  <div id="diagrams" class="left">
+    <h3>drawing a circuit diagram</h3>
+    <p>The circuit information in the BBC Bitesize guides uses lamps instead of LEDs. Lamps are easier to use, as is doesn't matter which way round they are connected in a circuit.</p>
+    <p>For soldering small circuits, LEDs are much easier for us to use!</p>
+    <p>Here is an example of a circuit diagram using LEDs - it shows the circuit of the keyring board you made during the workshop.</p>
+    <img src="./images/circuit-diagram.jpg" alt="circuit diagram for keyring board" width="400px" height="auto">
+    <br>
+    <p><strong>Draw your own circuit diagram of an LED circuit, using three or more LEDs.</strong></p>
+    <br>
+    <br>
+  </div>
+
+  <div id="soldering" class="left">
     <h3>soldering</h3>
     <p>If you have soldering equipment at home, at school, or in an after-school club, you can practice with other kits.</p>
     <p>Let us know if this applies to you, and we will give you another practice kit to work on.</p>
@@ -41,11 +53,17 @@
   </div>
 
   <div id="ultrasonic" class="left">
-    <h3>wiring an ultrasonic sensor</h3>
-    <p>...description of how these are connected...</p>
-    <p>...photograph of how these are connected...</p>
-    <p>...drawing of how these are connected...</p>
-    <p>...draw your own circuit diagram for two ultrasonic distance sensors...</p>
+    <h3>wiring ultrasonic sensors</h3>
+    <p>The ultrasonic sensors we are using are called <strong>HC-SR04</strong>. They have four pins to connect into your circuit.</p>
+    <ul>
+      <li><strong>Vcc</strong> = power in, positive side. They need 5V and so this is connected to the blue 5V section of your power board.</li>
+      <li><strong>Trig</strong> = trigger pin; this is the <strong>output</strong> and will send out a pulse of sound when activated. It is connected to the micro:bit (our code uses pin0).</li>
+      <li><strong>Echo</strong> = echo pin; this is the <strong>input</strong> and will receive the echo of the pulse of sound. It is connected to the micro:bit (our code uses pin1), but needs a 1k resistor first to protect the micro:bit.</li>
+      <li><strong>Gnd</strong> = ground, negative side. This is connected to the GND section of your power board.</li>
+    </ul>
+    <img src="./images/ultrasonic-wiring-photo.PNG" alt="photograph showing ultrasonic distance sensor next to power board, with arrows showing the connections, as described above" width="600px" height="auto">
+    <br>
+    <p><strong>Can you draw your own version of this picture, for two ultrasonic distance sensors instead of one?</strong></p>
     <br>
     <br>
   </div>
@@ -69,7 +87,7 @@
       <li>What voltage do they need to work properly?</li>
       <li>Has anyone connected them to a micro:bit before? Do they have any advice on how to connect it?</li>
     </ul>
-    <p>Pick your favourite component, and draw a circuit diagram of how to connect it to your robot.</p>
+    <p>Pick your favourite component, and draw a diagram of how to connect it to your robot.</p>
     <p><strong>If you bring your research to the next club session and discuss it with us, we might be able to give you what you need to add it your robot.</strong></p>
     <br>
   </div>
