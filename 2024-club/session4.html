@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robot Club - Session 4</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <header>
+      <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Session 4: assembly and testing</h1>
+    <br>
+  </header>
+
+  <div id="components" class="left">
+    <h3>You now have everything you need to build your robot</h3>
+    <img scr=".\images\" alt="photograph of all components as listed below" width="500px" height="auto">
+    <br>
+    <br>
+
+    <h5>Component list</h5>
+    <ol type="a">
+      <li><strong>Laser cut robot base</strong> (from Session 3)</li>
+      <li><strong>Two motors with red and black wires attached</strong></li>
+      <li><strong>Two wheels</strong> (to fit the motors)</li>
+      <li><strong>Castor wheel</strong></li>
+      <li><strong>Motor driver board</strong> (to translate between the micro:bit and the motors)</li>
+      <li><strong>Soldered power board</strong> (from Session 2)</li>
+      <li><strong>BBC micro:bit</strong> (to use with code from Session 1)</li>
+      <li><strong>Connector for the micro:bit</strong></li>
+      <li><strong>Battery pack</strong> (to fit a 9V battery)</li>
+      <li><strong>Selection of wires</strong></li>
+      <li><strong>Two holders for distance sensors</strong> (after testing that your robot can move, you will add in the sensors)</li>
+    </ol>
+    <br>
+
+    <h5>Assembly</h5>
+    <p>Follow the <a href="https://docs.google.com/presentation/d/1jZkq7TzWBNkAQCsPxrrvPTLQW2y8WHEqpLvqi-HaQyc/edit?usp=sharing" target="_blank">instructions here</a> to assemble your robot.</p>    
+    <br>
+  </div>
+
+  <div id="code" class="left">
+    <h3>Testing your motors</h3>
+    <p>If you have wired up the motors according to the instructions, the test code should:</p>
+    <ol type="A">
+      <li><strong>Turn both motors in the forward direction</strong></li>
+      <li><strong>Turn both motors in the backward direction</strong></li>
+      <li><strong>Turn one motor forwards and the other backwards, so that the robot spins left</strong></li>
+      <li><strong>Turn one motor forwards and the other backwards, so that the robot spins right</strong></li>
+    </ol>
+    <br>
+    <p>Download the <a href=".\examples\Robot-Test-Code.hex" download>test code</a>, open it using the <a href="https://python.microbit.org/v/3" target="_blank">online Python editor</a>, and put the code onto your micro:bit.</p>
+    <br>
+    <p><strong>Press A on your micro:bit to run the code.</strong></p>
+    <p><strong>Does your robot move as described in the list above?</strong></p>
+    <p>If yes, your robot does not need troubleshooting, and you can <a href="#driving">move on to the next section</a>!</p>
+    <p><strong>If it is not moving as described, look for your problem here.</strong></p>
+    <br>
+
+    <h5>My robot isn't moving at all!</h5>
+    <ol>
+      <li>Check that the robot is on.</li>
+      <li>Send the code to the micro:bit again, and make sure no errors show up.</li>
+    </ol>
+    <p>If this doesn't help, ask a workshop leader to help you.</p>
+    <br>
+
+    <h5>Only one of my motors is turning!</h5>
+    <ol>
+      <li>Check for loose wires - has anything come off?</li>
+      <li>Check the wires on the micro:bit connector - are they definitely in pins 12-15?</li>
+      <li>Make sure that the micro:bit is pushed very firmly into its connector.</li>
+    </ol>
+    <p>If this doesn't help, ask a workshop leader to help you.</p>
+    <br>
+
+    <h5>One or both of my motors will not stop turning!</h5>
+    <ol>
+      <li>Check the wires on the micro:bit connector - are they definitely in pins 12-15?</li>
+      <li>Make sure that the micro:bit is pushed very firmly into its connector.</li>
+      <li>Send the code to the micro:bit again, and make sure no errors show up.</li>
+    </ol>
+    <p>If this doesn't help, ask a workshop leader to help you.</p>
+    <br>
+
+    <h5>One of my motors is turning the wrong direction!
+      <br><em>(it spins when it should go forward, and goes forward when it should spin)</em></h5>
+    <ol>
+      <li>Check the wires between the motor driver and the micro:bit connector. Check the instructions, and make sure that they all go to the right place.</li>
+    </ol>
+    <p>If this doesn't help, ask a workshop leader to help you.</p>
+    <br>
+
+    <h5>Both of my motors are turning the wrong direction!
+      <br><em>(it goes backwards when it should go forward, and turns left when it should turn right)</em></h5>
+    <p>This can be changed either by moving the wires, or by changing the code.</p>
+    <p>Ask a workshop leader for help with this.</p>
+    <br>
+
+  </div>
+
+  <div id="driving" class="left">
+    <h3>Test driving</h3>
+    <p>Now that you know your robot works, test out its capabilities by driving it in different directions at different speeds.</p>
+    <ul>
+      <li>Do any of the wires catch on the ground while it is driving? Tape them out of the way if so.</li>
+      <li>Does it tip over when speeding up? Could you move the motors or the castor wheel to make it more stable?</li>
+    </ul>
+    <br>
+
+    <p>If you still have plenty of time during the workshop, you can <a href="#wiring-sensors">wire up your ultrasonic sensors</a> and test them.</p>
+    <br>
+    <p>If the workshop is nearly over, you should save that for next session and, instead, focus on perfecting your motor code so that you can use the best values in the sensor code next time.</p>
+    <ul>
+      <li>What is the minimum speed that still allows the motors to turn?</li>
+      <li>What values give a good full or quarter turn in each direction?</li>
+      <li>Is one wheel slower than the other? Can you edit your code to make it more consistant?</li>
+    </ul>
+    <p><strong>Save your code so that you can carry on next time.</strong></p>
+    <br>
+  </div>
+    
+  <div id="wiring-sensors" class="left">
+    <h3>Wiring the distance sensors</h3>
+    <h5>Component list</h5>
+    <p>From a workshop leader, collect two ultrasonic distance sensors with wires attached.</p>
+    <p>From your previous set of equipment, you need some wires.</p>
+    <br>
+    <h5>Wiring</h5>
+    <p>Go to the end of <a href="https://docs.google.com/presentation/d/1jZkq7TzWBNkAQCsPxrrvPTLQW2y8WHEqpLvqi-HaQyc/edit?usp=sharing" target="_blank">the assembly instructions</a> from earlier to see the wiring instructions, or follow the steps below.</p>
+    <ul>
+      <li>Attach the two sensors to the holders on your robot using the foam tape.</li>
+      <li>On <strong>both</strong> sensors, use a wire to attach the <strong>GND pin</strong> to the <strong>black GND section</strong> of your power board.</li>
+      <li>On <strong>both</strong> sensors, use a wire to attach the <strong>Vcc pin</strong> to the <strong>blue 5V section</strong> of your power board.</li>
+      <li>Take the wire that is connected to both sensors - this is the <strong>Trig pin</strong>. Connect it to the micro:bit connector <strong>pin 0</strong>.</li>
+      <li>On <strong>both</strong> sensors, very carefully attach a wire to the end of the <strong>resistor</strong> on the remaining pin.</li>
+      <li>Attach the wire on the <strong>front sensor</strong> to the micro:bit connector <strong>pin1</strong>.</li>
+      <li>Attach the wire on the <strong>side sensor</strong> to the micro:bit connector <strong>pin2</strong>.</li>
+    </ul>
+    <br>
+  </div>
+
+  <div id="sensor-tests" class="left">
+    <h3>Testing the sensors</h3>
+    <p>To test the sensors, use the same code as before, but the micro:bit must stay plugged in to the computer.</p>
+    <ol>
+      <li>Send the code to the micro:bit again.</li>
+      <li>Open the serial terminal at the bottom of the editor.</li>
+      <li>Click the button on the back of the micro:bit to restart your code.</li>
+      <li>Press B on the micro:bit to run the sensor test.</li>
+    </ol>
+    <br>
+    <p><strong>What numbers do you get?</strong></p>
+    <p>If the sensors are working correctly, they should change as objects are moved closer to or further away from the sensors.</p>
+    <p>If they do not change, or you get e.g. -0.03, speak to a workshop leader for some troubleshooting help.</p>
+    <br>
+    <p><strong>Save your code so that you can carry on next time.</strong></p>
+    <br>
+  </div>
+
+  <div id="your-code" class="left">
+    <h3>Your robot code</h3>
+    <p>Congratulations, your robot and sensors work!</p>
+    <p>In Session 5, we will help you to finish and test your robot code, so that it can use the distance sensors to decide how to move.</p>
+    <p>You can choose to either...</p>
+    <ul>
+      <li>Go back to the <a href="session1.html" target="_blank">Session 1</a> instructions, and use them to edit the code you have used today to set up the distance sensing algorithm.</li>
+      <li>Get your code from Session 1 (a link was emailed to you, or speak to a workshop leader), and edit the motor speeds based on today's testing.</li>
+    </ul>
+  </div>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/robot-camp/2024-club" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
