@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Robot Club - Session 5</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <header>
+      <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Session 5: programming and challenges</h1>
+    <br>
+  </header>
+
+  <div id="driving" class="left">
+    <h3>Test driving</h3>
+    <p>Before making any changes, check that your robot still works as expected, by running the <a href="session4.html#code" target="_blank">test code</a> again (press A on your micro:bit).</p>
+    <ul>
+      <li>Has anything come loose? Check your connections.</li>
+      <li>Do any of the wires catch on the ground while it is driving? Tape them out of the way if so.</li>
+    </ul>
+    <br>
+  </div>
+    
+  <div id="wiring-sensors" class="left">
+    <h3>Wiring the distance sensors</h3>
+    <h5>Component list</h5>
+    <p>From a workshop leader, collect two ultrasonic distance sensors with wires attached.</p>
+    <p>From your previous set of equipment, you need some wires.</p>
+    <br>
+    <h5>Wiring</h5>
+    <p>Go to the end of <a href="https://docs.google.com/presentation/d/1jZkq7TzWBNkAQCsPxrrvPTLQW2y8WHEqpLvqi-HaQyc/edit?usp=sharing" target="_blank">the assembly instructions</a> from earlier to see the wiring instructions, or follow the steps below.</p>
+    <ul>
+      <li>Attach the two sensors to the holders on your robot using the foam tape.</li>
+      <li>On <strong>both</strong> sensors, use a wire to attach the <strong>GND pin</strong> to the <strong>black GND section</strong> of your power board.</li>
+      <li>On <strong>both</strong> sensors, use a wire to attach the <strong>Vcc pin</strong> to the <strong>blue 5V section</strong> of your power board.</li>
+      <li>Take the wire that is connected to both sensors - this is the <strong>Trig pin</strong>. Connect it to the micro:bit connector <strong>pin 0</strong>.</li>
+      <li>On <strong>both</strong> sensors, very carefully attach a wire to the end of the <strong>resistor</strong> on the remaining pin.</li>
+      <li>Attach the wire on the <strong>front sensor</strong> to the micro:bit connector <strong>pin1</strong>.</li>
+      <li>Attach the wire on the <strong>side sensor</strong> to the micro:bit connector <strong>pin2</strong>.</li>
+    </ul>
+    <br>
+  </div>
+
+  <div id="sensor-tests" class="left">
+    <h3>Testing the sensors</h3>
+    <p>To test the sensors, use the same code as before, but the micro:bit must stay plugged in to the computer.</p>
+    <ol>
+      <li>Send the code to the micro:bit again.</li>
+      <li>Open the serial terminal at the bottom of the editor.</li>
+      <li>Click the button on the back of the micro:bit to restart your code.</li>
+      <li>Press B on the micro:bit to run the sensor test.</li>
+    </ol>
+    <br>
+    <p><strong>What numbers do you get?</strong></p>
+    <p>If the sensors are working correctly, they should change as objects are moved closer to or further away from the sensors.</p>
+    <p>If they do not change, or you get e.g. -0.03, speak to a workshop leader for some troubleshooting help.</p>
+    <br>
+  </div>
+
+  <div id="sensor-code" class="left">
+    <h3>Distance sensor code</h3>
+    <p>You can now program your robot to avoid obstactles, or you follow you around.</p>
+    <p>Download the <a href=".\examples\distance-sensing-withnotes.hex" download>example code</a>, or use the code you worked on in Session 1 (ask a workshop leader to help you find this).</p>
+
+    <p>The logic section of the code is this:</p>
+    <img src=".\images\code-comments.PNG" alt="screenshot of code and comments, as in the example code linked above" width="800px" height="auto">
+    <br>
+
+    <p>Or in flow chart form:</p>
+    <img src=".\images\flowchart.PNG" alt="logic flowchart of distance sensor code" width="800px" height="auto">
+
+    <p>Test your robot with this code, then decide what changes you want to make:</p>
+    <ul>
+      <li>Does it keep driving into obstacles? It could be moving too fast, or not checking the sensors often enough.</li>
+      <ul>
+        <li>To slow it down, change the numbers in the | <code>bot.drive()</code> | functions.</li>
+        <li>To check more often, change the numbers in the | <code>sleep()</code> | functions.</li>
+      </ul>
+      <li>Does it turn too early? It could be reacting when the obstacle is further away than it needs to be.</li>
+      <ul>
+        <li>To change how closely it reacts to obstacles, change the number in the | <code>if sensor <=</code> | statement.</li>
+      </ul>
+      <li>Do you want your robot to follow instead of avoid? Change what the robot does after checking the sensors.</li>
+      <ul>
+        <li>If the obstacle is closer than 10cm away, it should move instead of turn.</li>
+        <li>It should turn towards the obstacle instead of away from it.</li>
+      </ul>
+    </ul>
+    <br>
+
+    <p>Use the code print outs and flowchart to help you make your changes.</p>
+    <br>
+  </div>
+
+  <div id="advanced" class="left">
+    <h3>What next?</h3>
+    <p>Once your robot works, you can try some more advanced coding to give your robot more functionality, or make the code more efficient. For example:</p>
+    <ul>
+      <li>Use variables to keep track of the driving and turning speeds, and the distance from the obstacles. This will make it easier to make changes to your code in the future.</li>
+      <li>Use the micro:bit's buttons to change the speed, so you can make it run faster or slower depending on the complexity of the obstacle course.</li>
+      <li>Use the micro:bit's buttons to change between a 'AVOID' and a 'FOLLOW' mode.</li>
+    </ul>
+    <br>
+    <h5>COMING SOON: guidance for adding the above functionality into your robot's code</h5>
+  </div>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/robot-camp/2024-club" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
